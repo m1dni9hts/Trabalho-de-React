@@ -5,13 +5,13 @@ function IdeaForm({ addIdea }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const trimmedIdea = idea.trim();
-    if (trimmedIdea) {
-      const newIdea = {
+    const Idea = idea.trim();
+    if (Idea) {
+      const novaIdea = {
         id: Date.now(),
-        text: trimmedIdea,
+        text: Idea,
       };
-      addIdea(newIdea);
+      addIdea(novaIdea);
       setIdea('');
     }
   };

@@ -4,11 +4,11 @@ import IdeaItem from './IdeaItem';
 function IdeaList({ ideas, removeIdea }) {
   return (
     <div>
-      {ideas.map((idea, index) => (
+      {ideas.map((idea, num_item) => (
         <IdeaItem
           key={idea.id}
           idea={idea}
-          index={index + 1}
+          num_item={num_item + 1}
           removeIdea={removeIdea}
         />
       ))}
