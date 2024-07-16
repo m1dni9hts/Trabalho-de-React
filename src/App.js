@@ -8,7 +8,7 @@ function App() {
   const [ideas, setIdeas] = useState([]);
 
   const addIdea = (newIdea) => {
-    setIdeas([...ideas, newIdea]);
+    setIdeas([ideas, newIdea]);
   };
 
   const removeIdea = (id) => {

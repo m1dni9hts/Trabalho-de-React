@@ -1,27 +1,24 @@
 import React, { useState } from 'react';
 
 function IdeaForm({ addIdea }) {
-  const [idea, setIdea] = useState('');
+  const [idea, setarIdea] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const newIdea = {
+    const novaIdea = {
       id: Date.now(),
       text: idea,
     };
-    addIdea(newIdea);
-    setIdea('');
+    addIdea(novaIdea);
+    setarIdea('');
   };
 
   return (
     <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        placeholder="Digite sua ideia"
-        value={idea}
-        onChange={(e) => setIdea(e.target.value)}
+      <input className='class-input' type="text" placeholder="Digite nova ideia para a lista" 
+      value={idea} onChange={(e) => setarIdea(e.target.value)}
       />
-      <button type="submit">Adicionar Ideia</button>
+      <button className="botao-adicionar" type="submit">Adicionar Ideia</button>
     </form>
   );
 }
