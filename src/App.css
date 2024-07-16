@@ -49,8 +49,6 @@ button:hover {
 }
 
 .idea-item {
-  /* border: 1px solid #ccc;
-  border-radius: 4px; */
   padding: 10px;
   margin-bottom: 10px;
   display: flex;
@@ -72,4 +70,10 @@ button:hover {
 
 .idea-item button:hover {
   color: #000000;
+}
+
+.edited-label {
+  margin-right: 25px;
+  position: relative;
+  bottom: 3px
 }

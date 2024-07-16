@@ -1,15 +1,17 @@
+// src/components/IdeaList.js
 import React from 'react';
 import IdeaItem from './IdeaItem';
 
-function IdeaList({ ideas, removeIdea }) {
+function IdeaList({ ideas, removeIdea, updateIdea }) {
   return (
     <div>
-      {ideas.map((idea, num_item) => (
+      {ideas.map((idea, index) => (
         <IdeaItem
           key={idea.id}
           idea={idea}
-          num_item={num_item + 1}
+          index={index + 1}
           removeIdea={removeIdea}
+          updateIdea={updateIdea}
         />
       ))}
     </div>
