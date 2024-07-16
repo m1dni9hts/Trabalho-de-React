@@ -1,31 +1,27 @@
 import React, { useState } from 'react';
 import Header from './components/Header';
-import ItemList from './components/ItemList';
-import Formulário from './components/Formulário';
+import IdeaForm from './components/IdeaForm';
+import IdeaList from './components/IdeaList';
 import './App.css';
 
-const App = () => {
-  const [items, setItems] = useState([]);
+function App() {
+  const [ideas, setIdeas] = useState([]);
 
-  const adicionarItem = (item) => {
-    setItems([items, item]);
+  const addIdea = (newIdea) => {
+    setIdeas([...ideas, newIdea]);
   };
 
-  const editarItem = (id, newItem) => {
-    setItems(items.map((item, index) => (index === id ? newItem : item)));
-  };
-
-  const removerItem = (id) => {
-    setItems(items.filter((_, index) => index !== id));
+  const removeIdea = (id) => {
+    setIdeas(ideas.filter((idea) => idea.id !== id));
   };
 
   return (
     <div className="App">
-      <Header/>
-      <Formulário adicionarItem={adicionarItem} />
-      <ItemList items={items} editarItem={editarItem} removerItem={removerItem} />
+      <Header />
+      <IdeaForm addIdea={addIdea} />
+      <IdeaList ideas={ideas} removeIdea={removeIdea} />
     </div>
   );
-};
+}
 
 export default App;
