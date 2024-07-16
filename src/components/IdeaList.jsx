@@ -3,7 +3,7 @@ import IdeaItem from './IdeaItem';
 
 function IdeaList({ ideas, removeIdea }) {
   return (
-    <div className="idea">
+    <div>
       {ideas.map((idea, index) => (
         <IdeaItem
           key={idea.id}

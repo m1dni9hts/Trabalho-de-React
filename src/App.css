@@ -1,16 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap');
+
 body {
-  font-family: "Outfit", sans-serif;
+  font-family: 'Outfit', sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
 .App {
-  font-family: "Outfit", sans-serif;
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
 }
+
 
 header {
   text-align: center;
@@ -21,6 +23,7 @@ form {
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
+  font-family: 'Outfit', sans-serif;
 }
 
 input {
@@ -28,19 +31,22 @@ input {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  font-family: 'Outfit', sans-serif;
 }
 
 button {
   padding: 10px;
   border: none;
   border-radius: 4px;
-  background-color: #007bff;
+  background-color: #000000;
   color: white;
   cursor: pointer;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 450;
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #818181;
 }
 
 .idea-item {
@@ -48,16 +54,22 @@ button:hover {
   border-radius: 4px;
   padding: 10px;
   margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .idea-item h3 {
-  margin: 0 0 10px 0;
+  margin: 0;
 }
 
 .idea-item button {
-  margin-right: 5px;
+  background: none;
+  border: none;
+  color: #000000;
+  cursor: pointer;
 }
 
-.idea {
-  background-color: #ffffff;
+.idea-item button:hover {
+  color: #000000;
 }
