@@ -9,7 +9,7 @@ Esta aplicação web permite adicionar, editar e remover ideias de decoração.
 - GitBash
 
 ## Instruções de Instalação
-1. Clone o repositório:
+1. Clone o repositório no GitBash da sua Área de Trabalho:
    ```bash
    git clone https://github.com/m1dni9hts/Trabalho-de-React.git
 2. Entre na pasta do repositório:
