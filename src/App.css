@@ -72,7 +72,7 @@ button:hover {
   color: #000000;
 }
 
-.edited-label {
+.editado {
   margin-right: 25px;
   position: relative;
   bottom: 3px;
@@ -84,7 +84,7 @@ button:hover {
     align-items: flex-start;
   }
 
-  .idea-actions {
+  .class-ideia {
     flex-direction: column;
     align-items: flex-start;
     width: 100%;
@@ -95,7 +95,7 @@ button:hover {
     margin-top: 5px;
   }
 
-  .edited-label {
+  .editado {
     width: 100%;
     margin-right: 0;
     margin-bottom: 5px;

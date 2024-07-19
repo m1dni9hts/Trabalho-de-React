@@ -1,39 +1,37 @@
-// src/components/IdeaItem.js
 import React, { useState } from 'react';
 
-function IdeaItem({ idea, index, removeIdea, updateIdea }) {
-  const [isEditing, setIsEditing] = useState(false);
-  const [editedText, setEditedText] = useState(idea.text);
-  const [isEdited, setIsEdited] = useState(false);
+// Componente para cada item da lista de ideias
+function ItemIdeia({ ideia, indice, removerIdeia, atualizarIdeia }) {
+  const [estaEditando, setEstaEditando] = useState(false); // para saber se está no modo de edição
+  const [textoEditado, setTextoEditado] = useState(ideia.texto); // para armazenar o texto editado
+  const [foiEditado, setFoiEditado] = useState(false); // para saber se o item foi editado
 
-  const handleEdit = () => {
-    setIsEditing(true);
+  // Função para o modo de edição
+  const iniciarEdicao = () => {
+    setEstaEditando(true);
   };
 
-  const handleSave = () => {
-    if (editedText.trim()) {
-      updateIdea({ ...idea, text: editedText });
-      setIsEditing(false);
-      setIsEdited(true);
+  // Função para salvar a edição
+  const salvarEdicao = () => {
+    if (textoEditado.trim()) { // Verifica se o texto não está vazio
+      atualizarIdeia({ ...ideia, texto: textoEditado }); // Atualiza a ideia com o novo texto
+      setEstaEditando(false); // Sai do modo de edição
+      setFoiEditado(true); // Marca o item como editado
     }
   };
 
   return (
     <div className="idea-item">
-      {isEditing ? (
-        <input
-          type="text"
-          value={editedText}
-          onChange={(e) => setEditedText(e.target.value)}
-          className="idea-input"
-        />
+      {estaEditando ? (
+        <input type="text" value={textoEditado} onChange={(e) => 
+        setTextoEditado(e.target.value)} className="idea-input"/>
       ) : (
-        <h3 className="idea-text">{index + 1}. {idea.text}</h3>
+        <h3 className="idea-text">{indice + 1}. {ideia.texto}</h3>
       )}
-      <div className="idea-actions">
-        {isEdited && <span className="edited-label">item editado</span>}
-        <button onClick={isEditing ? handleSave : handleEdit} className="edit-btn">
-          {isEditing ? (
+      <div className="class-ideia">
+        {foiEditado && <span className="editado">item editado</span>}
+        <button onClick={estaEditando ? salvarEdicao : iniciarEdicao} className="edit-btn">
+          {estaEditando ? (
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
               <path d="M0 0h24v24H0z" fill="none"/>
               <path d="M5 13l4 4L19 7l-1.41-1.41L9 14.17l-2.59-2.58L5 13z"/>
@@ -45,7 +43,7 @@ function IdeaItem({ idea, index, removeIdea, updateIdea }) {
             </svg>
           )}
         </button>
-        <button onClick={() => removeIdea(idea.id)} className="delete-btn">
+        <button onClick={() => removerIdeia(ideia.id)} className="delete-btn">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-trash" viewBox="0 0 16 16">
             <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
             <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
@@ -56,4 +54,4 @@ function IdeaItem({ idea, index, removeIdea, updateIdea }) {
   );
 }
 
-export default IdeaItem;
+export default ItemIdeia;

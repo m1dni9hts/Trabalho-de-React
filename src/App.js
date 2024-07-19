@@ -1,26 +1,29 @@
 // src/App.js
 import React, { useState } from 'react';
-import IdeaItem from './components/IdeaItem';
+import ItemIdeia from './components/ItemIdeia';
 import './App.css';
 
 function App() {
-  const [ideas, setIdeas] = useState([]);
-  const [newIdea, setNewIdea] = useState("");
+  const [ideias, setIdeias] = useState([]); // Estado para armazenar a lista de ideias
+  const [novaIdeia, setNovaIdeia] = useState(""); // Estado para o valor do novo input de ideia
 
-  const addIdea = (e) => {
+  // Função para adicionar uma nova ideia
+  const adicionarIdeia = (e) => {
     e.preventDefault();
-    if (newIdea.trim()) {
-      setIdeas([...ideas, { id: Date.now(), text: newIdea }]);
-      setNewIdea("");
+    if (novaIdeia.trim()) { // Verifica se a nova ideia não está vazia
+      setIdeias([...ideias, { id: Date.now(), texto: novaIdeia }]); // Adiciona a nova ideia à lista
+      setNovaIdeia(""); // Limpa o input
     }
   };
 
-  const removeIdea = (id) => {
-    setIdeas(ideas.filter(idea => idea.id !== id));
+  // Função para remover uma ideia
+  const removerIdeia = (id) => {
+    setIdeias(ideias.filter(ideia => ideia.id !== id)); // Filtra a ideia a ser removida
   };
 
-  const updateIdea = (updatedIdea) => {
-    setIdeas(ideas.map(idea => (idea.id === updatedIdea.id ? updatedIdea : idea)));
+  // Função para atualizar uma ideia editada
+  const atualizarIdeia = (ideiaAtualizada) => {
+    setIdeias(ideias.map(ideia => (ideia.id === ideiaAtualizada.id ? ideiaAtualizada : ideia))); // Atualiza a ideia editada
   };
 
   return (
@@ -28,28 +31,27 @@ function App() {
       <header>
         <h1>Lista de Ideias de Decoração</h1>
       </header>
-      <form onSubmit={addIdea}>
+      <form onSubmit={adicionarIdeia}>
         <input
           type="text"
-          value={newIdea}
-          onChange={(e) => setNewIdea(e.target.value)}
-          placeholder="Digite uma nova ideia"
+          value={novaIdeia}
+          onChange={(e) => setNovaIdeia(e.target.value)}
+          placeholder="Adicione uma nova ideia"
         />
         <button type="submit">Adicionar Ideia</button>
       </form>
-      <div>
-        {ideas.map((idea, index) => (
-          <IdeaItem
-            key={idea.id}
-            idea={idea}
-            index={index}
-            removeIdea={removeIdea}
-            updateIdea={updateIdea}
-          />
-        ))}
-      </div>
+      {ideias.map((ideia, indice) => (
+        <ItemIdeia
+          key={ideia.id}
+          ideia={ideia}
+          indice={indice}
+          removerIdeia={removerIdeia}
+          atualizarIdeia={atualizarIdeia}
+        />
+      ))}
     </div>
   );
 }
 
 export default App;
+
