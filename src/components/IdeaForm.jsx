@@ -28,5 +28,4 @@ function IdeaForm({ addIdea }) {
     </form>
   );
 }
-
 export default IdeaForm;
