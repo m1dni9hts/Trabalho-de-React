@@ -28,7 +28,7 @@ function IdeaItem({ idea, index, removeIdea, updateIdea }) {
           className="idea-input"
         />
       ) : (
-        <h3 className="idea-text">{index}. {idea.text}</h3>
+        <h3 className="idea-text">{index + 1}. {idea.text}</h3>
       )}
       <div className="idea-actions">
         {isEdited && <span className="edited-label">item editado</span>}
