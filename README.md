@@ -1,7 +1,7 @@
 # Lista de Ideias de Decoração
 
 ## Descrição
-Esta aplicação web permite adicionar, editar e remover ideias de decoração.
+Esta aplicação permite adicionar, editar e remover ideias de decoração.
 
 ## Tecnologias Utilizadas
 - React
