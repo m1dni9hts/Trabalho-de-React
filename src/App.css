@@ -53,12 +53,29 @@ button:hover {
   margin-bottom: 10px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start; /* Alinha o índice e o texto no topo */
 }
 
-.nota-item h3 {
-  margin: 0;
-  font-weight: 530;
+.nota-text-container {
+  flex: 1; /* Permite que o texto ocupe o espaço disponível */
+  display: flex; /* Mantém o texto e o índice na mesma linha */
+}
+
+.nota-indice {
+  font-weight: 530; /* Espessura do índice */
+  margin-right: 10px; /* Espaçamento entre o índice e o texto */
+}
+
+.nota-text {
+  font-weight: 450; /* Espessura do texto das notas */
+  overflow-wrap: break-word; /* Permite quebra de linha em palavras longas */
+  flex: 1; /* Faz com que o texto ocupe o espaço restante */
+  margin-top: 0; /* Remove qualquer margem superior */
+}
+
+.class-Nota {
+  display: flex;
+  align-items: center; /* Alinha os ícones verticalmente */
 }
 
 .nota-item button {
@@ -80,23 +97,24 @@ button:hover {
 
 @media (max-width: 600px) {
   .nota-item {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: column; /* Alinha itens em coluna em telas menores */
+    align-items: flex-start; /* Alinha os itens à esquerda */
   }
 
   .class-Nota {
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
+    flex-direction: row; /* Mantém os ícones lado a lado */
+    align-items: center; /* Alinha os ícones verticalmente */
+    width: 100%; /* Garante que os ícones ocupem toda a largura disponível */
+    justify-content: flex-start; /* Alinha ícones à esquerda */
   }
 
   .edit-btn, .delete-btn {
-    margin-left: 0;
-    margin-top: 5px;
+    margin-left: 10px; /* Espaçamento entre os botões */
+    margin-top: 5px; /* Espaçamento vertical entre os botões */
   }
 
   .editado {
-    width: 100%;
+    width: 100%; /* Permite que o texto editado ocupe toda a largura */
     margin-right: 0;
     margin-bottom: 5px;
     position: static;
