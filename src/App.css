@@ -59,6 +59,7 @@ button:hover {
 .nota-text-container {
   flex: 1; /* Permite que o texto ocupe o espaço disponível */
   display: flex; /* Mantém o texto e o índice na mesma linha */
+  align-items: flex-start; /* Alinha o índice e o texto no topo */
 }
 
 .nota-indice {
@@ -69,6 +70,8 @@ button:hover {
 .nota-text {
   font-weight: 450; /* Espessura do texto das notas */
   overflow-wrap: break-word; /* Permite quebra de linha em palavras longas */
+  word-wrap: break-word; /* Compatibilidade adicional para quebra de linha */
+  white-space: pre-wrap; /* Mantém espaços em branco e permite quebra de linha */
   flex: 1; /* Faz com que o texto ocupe o espaço restante */
   margin-top: 0; /* Remove qualquer margem superior */
 }
@@ -90,6 +93,7 @@ button:hover {
 }
 
 .editado {
+  margin-top: 5px; /* Espaço entre os ícones e a mensagem */
   margin-right: 25px;
   position: relative;
   bottom: 3px;
@@ -114,7 +118,7 @@ button:hover {
   }
 
   .editado {
-    width: 100%; /* Permite que o texto editado ocupe toda a largura */
+    width: auto; /* Permite que o texto editado ocupe toda a largura */
     margin-right: 0;
     margin-bottom: 5px;
     position: static;
