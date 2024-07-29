@@ -48,7 +48,7 @@ button:hover {
   background-color: #818181;
 }
 
-.idea-item {
+.nota-item {
   padding: 10px;
   margin-bottom: 10px;
   display: flex;
@@ -56,19 +56,19 @@ button:hover {
   align-items: center;
 }
 
-.idea-item h3 {
+.nota-item h3 {
   margin: 0;
   font-weight: 530;
 }
 
-.idea-item button {
+.nota-item button {
   background: none;
   border: none;
   color: #000000;
   cursor: pointer;
 }
 
-.idea-item button:hover {
+.nota-item button:hover {
   color: #000000;
 }
 
@@ -79,12 +79,12 @@ button:hover {
 }
 
 @media (max-width: 600px) {
-  .idea-item {
+  .nota-item {
     flex-direction: column;
     align-items: flex-start;
   }
 
-  .class-ideia {
+  .class-Nota {
     flex-direction: column;
     align-items: flex-start;
     width: 100%;

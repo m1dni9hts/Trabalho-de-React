@@ -1,52 +1,52 @@
 // src/App.js
 import React, { useState } from 'react';
-import ItemIdeia from './components/ItemIdeia';
+import ItemNota from './components/ItemNota';
 import './App.css';
 
 function App() {
-  const [ideias, setIdeias] = useState([]); // Estado para armazenar a lista de ideias
-  const [novaIdeia, setNovaIdeia] = useState(""); // Estado para o valor do novo input de ideia
+  const [Notas, setNotas] = useState([]); // Estado para armazenar a lista de Notas
+  const [novaNota, setNovaNota] = useState(""); // Estado para o valor do novo input de Nota
 
-  // Função para adicionar uma nova ideia
-  const adicionarIdeia = (e) => {
+  // Função para adicionar uma nova Nota
+  const adicionarNota = (e) => {
     e.preventDefault();
-    if (novaIdeia.trim()) { // Verifica se a nova ideia não está vazia
-      setIdeias([...ideias, { id: Date.now(), texto: novaIdeia }]); // Adiciona a nova ideia à lista
-      setNovaIdeia(""); // Limpa o input
+    if (novaNota.trim()) { // Verifica se a nova Nota não está vazia
+      setNotas([...Notas, { id: Date.now(), texto: novaNota }]); // Adiciona a nova Nota à lista
+      setNovaNota(""); // Limpa o input
     }
   };
 
-  // Função para remover uma ideia
-  const removerIdeia = (id) => {
-    setIdeias(ideias.filter(ideia => ideia.id !== id)); // Filtra a ideia a ser removida
+  // Função para remover uma Nota
+  const removerNota = (id) => {
+    setNotas(Notas.filter(Nota => Nota.id !== id)); // Filtra a Nota a ser removida
   };
 
-  // Função para atualizar uma ideia editada
-  const atualizarIdeia = (ideiaAtualizada) => {
-    setIdeias(ideias.map(ideia => (ideia.id === ideiaAtualizada.id ? ideiaAtualizada : ideia))); // Atualiza a ideia editada
+  // Função para atualizar uma Nota editada
+  const atualizarNota = (NotaAtualizada) => {
+    setNotas(Notas.map(Nota => (Nota.id === NotaAtualizada.id ? NotaAtualizada : Nota))); // Atualiza a Nota editada
   };
 
   return (
     <div className="App">
       <header>
-        <h1>Lista de Ideias de Decoração</h1>
+        <h1>Lista de Notas e Anotações</h1>
       </header>
-      <form onSubmit={adicionarIdeia}>
+      <form onSubmit={adicionarNota}>
         <input
           type="text"
-          value={novaIdeia}
-          onChange={(e) => setNovaIdeia(e.target.value)}
-          placeholder="Adicione uma nova ideia"
+          value={novaNota}
+          onChange={(e) => setNovaNota(e.target.value)}
+          placeholder="Adicione uma nova Nota"
         />
-        <button type="submit">Adicionar Ideia</button>
+        <button type="submit">Adicionar nota</button>
       </form>
-      {ideias.map((ideia, indice) => (
-        <ItemIdeia
-          key={ideia.id}
-          ideia={ideia}
+      {Notas.map((Nota, indice) => (
+        <ItemNota
+          key={Nota.id}
+          Nota={Nota}
           indice={indice}
-          removerIdeia={removerIdeia}
-          atualizarIdeia={atualizarIdeia}
+          removerNota={removerNota}
+          atualizarNota={atualizarNota}
         />
       ))}
     </div>
