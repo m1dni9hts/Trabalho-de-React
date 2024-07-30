@@ -1,29 +1,26 @@
-// src/App.js
 import React, { useState } from 'react';
 import ItemNota from './components/ItemNota';
 import './App.css';
 
 function App() {
-  const [Notas, setNotas] = useState([]); // Estado para armazenar a lista de Notas
-  const [novaNota, setNovaNota] = useState(""); // Estado para o valor do novo input de Nota
-
-  // Função para adicionar uma nova Nota
+  const [Notas, setNotas] = useState([]); 
+  const [novaNota, setNovaNota] = useState(""); 
+ 
   const adicionarNota = (e) => {
     e.preventDefault();
-    if (novaNota.trim()) { // Verifica se a nova Nota não está vazia
-      setNotas([...Notas, { id: Date.now(), texto: novaNota }]); // Adiciona a nova Nota à lista
-      setNovaNota(""); // Limpa o input
+    if (novaNota.trim()) { 
+      setNotas([...Notas, { id: Date.now(), texto: novaNota }]); 
+      setNovaNota(""); 
     }
   };
 
-  // Função para remover uma Nota
+
   const removerNota = (id) => {
-    setNotas(Notas.filter(Nota => Nota.id !== id)); // Filtra a Nota a ser removida
+    setNotas(Notas.filter(Nota => Nota.id !== id)); 
   };
 
-  // Função para atualizar uma Nota editada
   const atualizarNota = (NotaAtualizada) => {
-    setNotas(Notas.map(Nota => (Nota.id === NotaAtualizada.id ? NotaAtualizada : Nota))); // Atualiza a Nota editada
+    setNotas(Notas.map(Nota => (Nota.id === NotaAtualizada.id ? NotaAtualizada : Nota))); 
   };
 
   return (

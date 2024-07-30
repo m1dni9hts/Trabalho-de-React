@@ -1,22 +1,20 @@
 import React, { useState } from 'react';
 
-// Componente para cada item da lista de Notas
 function ItemNota({ Nota, indice, removerNota, atualizarNota }) {
-  const [Editando, setEditando] = useState(false); // para saber se está no modo de edição
-  const [NovoTexto, setNovoTexto] = useState(Nota.texto); // para armazenar o texto editado
-  const [Editado, setEditado] = useState(false); // para saber se o item foi editado
+  const [Editando, setEditando] = useState(false); 
+  const [NovoTexto, setNovoTexto] = useState(Nota.texto); 
+  const [Editado, setEditado] = useState(false); 
 
-  // Função para o modo de edição
   const iniciarEdicao = () => {
     setEditando(true);
   };
 
-  // Função para salvar a edição
+  
   const salvarEdicao = () => {
-    if (NovoTexto.trim()) { // Verifica se o texto não está vazio
-      atualizarNota({ ...Nota, texto: NovoTexto }); // Atualiza a Nota com o novo texto
-      setEditando(false); // Sai do modo de edição
-      setEditado(true); // Marca o item como editado
+    if (NovoTexto.trim()) { 
+      atualizarNota({ ...Nota, texto: NovoTexto }); 
+      setEditando(false); 
+      setEditado(true); 
     }
   };
 

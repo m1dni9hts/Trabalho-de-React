@@ -1,4 +1,3 @@
-// src/components/ListaNotas.js
 import React from 'react';
 import ItemNota from './ItemNota';
 
