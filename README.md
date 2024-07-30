@@ -1,7 +1,7 @@
 # Lista de Notas e Anotações
 
 ## Descrição do tema
-Esta aplicação permite adicionar, editar e remover itens de uma lista e foi feita para ser utilizada como uma Lista de Notas e Anotações, permitindo ao usuário adicionar textos de diversos tamanhos, mantendo a aplicação renponsiva em qualquer dispositivo, e numerar cada item conforme sua ordem de criação.
+Esta aplicação permite adicionar, editar e remover itens de uma lista e foi feita para ser utilizada como uma Lista de Notas e Anotações, permitindo ao usuário adicionar textos de diversos tamanhos, mantendo a aplicação responsiva em qualquer dispositivo, e numerar cada item conforme sua ordem de criação.
 
 ## Explicando os Componentes
 
